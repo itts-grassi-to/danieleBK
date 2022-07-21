@@ -1,3 +1,9 @@
+#*************************************************************************
+## CREATO DA ORTU prof. DANIELE
+## daniele.ortu@itisgrassi.edu.it
+
+import json
+
 from datetime import date
 from os import listdir
 from os import remove
@@ -6,14 +12,23 @@ from os import walk
 
 class tbk:
 	
-    def __init__(self):
+    def __init__(self,fConf):
 		#print("costruttore")
-        self.__da="/opt/danieleBK/da"
-        self.__dirBK="/opt/danieleBK/bk"
-        self.__nome="bkDaniele"
-        self.__do=str(date.today())
-        self.__maxBK=5
-        self.__nomeStatoFile="stf.bin"
+        data = json.load(open(fConf))
+        self._da=data["dirDA"]
+        self._dirBK=data["dirBK"]
+        self._tmp=data["dirTMP"]
+        self._nome=data["nomeFileBK"]
+        self._maxBK=data["maxBK"]
+        self._fileLOG=data["dirBASE"]+"/"+data["nomeFileBK"]+".log"
+        self._do=str(date.today())
+        self._nomeStatoFile="stf.bin"
+    def stampaConf(self):
+        print(self._da)
+        print(self._dirBK)
+        print(self._tmp)
+        print(self._nome)
+        print(self._maxBK)
     def getDataOggi(self):
         return self.__do
     def __costruisciNome(self,pt,d,nome):
@@ -24,22 +39,25 @@ class tbk:
             #curr_date_temp = date.strptime(self.__do, "%y-%m-%a")
             #new_date = curr_date_temp + datetime.timedelta(days=5)
             #print(new_date)
-    def __getListaBackup(self):
-        l=[ f for f in listdir(self.__dirBK) if isfile(join(self.__dirBK , f))]
+    def _getListaBackup(self):
+        l=[ f for f in listdir(self._dirBK) if isfile(join(self._dirBK , f))]
         return self.__filtraLista(l)
     def __filtraLista(self,l):
-        l=[f for f in l if f[len(self.__do)+1:len(self.__do)+1+len(self.__nome)]==self.__nome ]
+        l=[f for f in l if f[len(self._do)+1:len(self._do)+1+len(self._nome)]==self._nome ]
         #print("2022-07-17-bkDaniele0"[len(self.__do):len(self.__do)+1+len(self.__nome)])
         return l
-    def rimuoviVecchi(self):
-        l=self.__getListaBackup()
+    def _rimuoviVecchi(self):
+        l=self._getListaBackup()
         l.sort()
-        n=len(l)-self.__maxBK
-        print(n)
+        n=len(l)-self._maxBK
+        #print(n)
+        r=""
         if n>0:
             for i in range(n):
-                remove(self.__dirBK+"/"+l[i])
-                print("Ho rimosso: "+str(l[i]))
+                #print(self._dirBK+"/"+l[i])
+                remove(self._dirBK+"/"+l[i])
+                r+="\nHo rimosso: "+str(l[i])
+        return r
     def __getListaDaBackuppare(self,dirpath):
         f=[]
         dirname=[]
@@ -72,6 +90,6 @@ class tbk:
         print(lf)
 
 
-c=tbk()
-c.backuppa()
+#c=tbk("./conf.json")
+#c.stampaConf()
 

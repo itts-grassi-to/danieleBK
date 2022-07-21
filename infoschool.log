@@ -1,0 +1,15 @@
+Copio il file root@172.16.200.200:/home/interbase/pipi.txt in /opt/danieleBK/tmp/
+File root@172.16.200.200:/home/interbase/pipi.txt copiato
+Cambio directory: /opt/danieleBK/tmp
+Directory cambiata
+Comprimo 2022-07-21-infoschool.tar.gz
+File compresso
+Copio file 2022-07-21-infoschool.tar.gz in /opt/danieleBK/bk
+File copiato
+Pulisco /opt/danieleBK/tmp
+Directory ripulita
+Elimina vecchi
+Ho rimosso: 2022-07-01-infoschool.tar.gz
+Ho rimosso: 2022-07-02-infoschool .tar.gz
+Ho rimosso: 2022-07-10-infoschool (copia 4).tar.gz
+PROCESSO ESEGUITO CON SUCESSO

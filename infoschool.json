@@ -1,0 +1,8 @@
+{
+    "dirDA":"root@172.16.200.200:/home/interbase",
+    "dirBASE":"/opt/danieleBK",
+    "dirBK":"/opt/danieleBK/bk",
+    "dirTMP":"/opt/danieleBK/tmp",
+    "nomeFileBK":"infoschool",
+    "maxBK":5
+}
