@@ -1,15 +1,16 @@
-Copio il file root@172.16.200.200:/home/interbase/pipi.txt in /opt/danieleBK/tmp/
-File root@172.16.200.200:/home/interbase/pipi.txt copiato
+Monto directory da backuppare: root@172.16.200.200:/home/interbase
+Directory GIA montata
+Monto directory dei backup: r740xd@172.16.200.155:/media/r740xd/SAMSUNG/INFOSCHOOL_VM
+Directory GIA montata
+Copio il file /opt/danieleBK/mntDA/AXIOSDATABASE.FDB in /opt/danieleBK/tmp/
+File /opt/danieleBK/mntDA/AXIOSDATABASE.FDB copiato
 Cambio directory: /opt/danieleBK/tmp
 Directory cambiata
-Comprimo 2022-07-21-infoschool.tar.gz
+Comprimo 
 File compresso
-Copio file 2022-07-21-infoschool.tar.gz in /opt/danieleBK/bk
+Copio file 2022-07-22-infoschool.tar.gz in /opt/danieleBK/mntBK
 File copiato
 Pulisco /opt/danieleBK/tmp
 Directory ripulita
 Elimina vecchi
-Ho rimosso: 2022-07-01-infoschool.tar.gz
-Ho rimosso: 2022-07-02-infoschool .tar.gz
-Ho rimosso: 2022-07-10-infoschool (copia 4).tar.gz
 PROCESSO ESEGUITO CON SUCESSO

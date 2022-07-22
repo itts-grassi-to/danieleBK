@@ -1,7 +1,8 @@
 {
-    "dirDA":"root@172.16.200.200:/home/interbase",
+    "remoto":{"from":true,"to":true},
     "dirBASE":"/opt/danieleBK",
-    "dirBK":"/opt/danieleBK/bk",
+    "dirDA":"root@172.16.200.200:/home/interbase",
+    "dirBK":"r740xd@172.16.200.155:/media/r740xd/SAMSUNG/INFOSCHOOL_VM",
     "dirTMP":"/opt/danieleBK/tmp",
     "nomeFileBK":"infoschool",
     "maxBK":5

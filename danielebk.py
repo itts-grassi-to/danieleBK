@@ -9,13 +9,20 @@ from os import listdir
 from os import remove
 from os.path import isfile, join
 from os import walk
+import subprocess
 
 class tbk:
 	
     def __init__(self,fConf):
 		#print("costruttore")
         data = json.load(open(fConf))
-        self._da=data["dirDA"]
+        #print(data)
+        #self._remoto=json.loads(data["remoto"])
+        self._remoto=data["remoto"]
+        #self._remotoFrom=remoto["from"]
+        #self._remotoTO=remoto["to"]
+        self._dirBASE=data["dirBASE"]
+        self._dirDA=data["dirDA"]
         self._dirBK=data["dirBK"]
         self._tmp=data["dirTMP"]
         self._nome=data["nomeFileBK"]
@@ -23,6 +30,9 @@ class tbk:
         self._fileLOG=data["dirBASE"]+"/"+data["nomeFileBK"]+".log"
         self._do=str(date.today())
         self._nomeStatoFile="stf.bin"
+    def isMount(self,sub):
+        r=subprocess.run(["df"],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        return sub in str(r.stdout)
     def stampaConf(self):
         print(self._da)
         print(self._dirBK)
@@ -89,7 +99,6 @@ class tbk:
         lf=self.__getListaDaBackuppare(self.__da)
         print(lf)
 
-
-#c=tbk("./conf.json")
-#c.stampaConf()
+#c=tbk("./infoschool.json")
+#print(c.isMount("root@172.16.200.200:/home/interbase"))
 
